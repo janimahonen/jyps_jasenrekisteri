@@ -444,7 +444,7 @@ $form = $this->createForm(new MemberJoinType, $member);
 $form->handleRequest($request);
 
 if ($form->isValid()) {
-  $membership_card = $this->generateMembershipCard($member);
+//  $membership_card = $this->generateMembershipCard($member);
 
   //create memberfee
   $memberfee = new MemberFee();

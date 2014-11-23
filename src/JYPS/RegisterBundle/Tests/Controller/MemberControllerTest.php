@@ -24,6 +24,11 @@ class MemberControllerTest extends WebTestCase
     	'memberid[firstname]' => 'Teuvo',
     	'memberid[surname]'   => 'Testaaja',
 		));
-       # $client->submit($form);
+        $client->submit($form);
+        
+        $this->assertGreaterThan(
+            0,
+        	$crawler->filter('html:contains("virhetilanteeseen")')->count()
+        );	
     }
 }
