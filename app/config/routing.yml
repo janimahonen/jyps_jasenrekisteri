@@ -30,7 +30,7 @@ all_members:
 add_member:
     path:   /member/add
     defaults:  { _controller: JYPSRegisterBundle:Member:addMember }
-    methods:  [POST]
+    methods:  [GET]
 
 search:
     path:   /member/search
@@ -95,7 +95,7 @@ mark_fees:
 showClosed:
     path:   /member/history
     defaults:  { _controller: JYPSRegisterBundle:Member:showClosed}
-    methods:  [POST]
+    methods:  [GET]
 
 restoreMember:
     path:   /member/history/restore
@@ -110,7 +110,7 @@ JYPSRegisterBundle_user:
 JYPSRegisterBundle_member_intrestconfig:
     resource: "@JYPSRegisterBundle/Resources/config/routing/intrestconfig.php"
     prefix:   /member/intrestconfig
-    methods:  [POST]
+    methods:  [GET]
 
 index_password:
     path:   /member/changePassword

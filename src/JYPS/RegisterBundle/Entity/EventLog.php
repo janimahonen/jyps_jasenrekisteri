@@ -19,7 +19,7 @@ class EventLog implements UserInterface, \Serializable
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-     /**
+    /**
     * @ORM\Column(type="string")
     */
     private $event;
@@ -31,13 +31,25 @@ class EventLog implements UserInterface, \Serializable
     * @ORM\Column(type="date")
     */
     private $date;
-     /**
+    /**
     * @ORM\Column(type="integer")
     */
-    private $member_id;
+    private $target_id;
+    /**
+    * @ORM\Column(type="string")
+    */
+    private $target_entity;
     /**
      * @inheritDoc
      */
+       /**
+     * @inheritDoc
+     */
+    public function __construct($event,$user,$target_id,$target_entity)
+    {
+      
+    }
+
     public function getUsername()
     {
         return $this->username;
@@ -181,25 +193,25 @@ class EventLog implements UserInterface, \Serializable
     }
 
     /**
-     * Set member_id
+     * Set target_id
      *
      * @param integer $memberId
      * @return EventLog
      */
     public function setMemberId($memberId)
     {
-        $this->member_id = $memberId;
+        $this->target_id = $target_id;
 
         return $this;
     }
 
     /**
-     * Get member_id
+     * Get target_id
      *
      * @return integer 
      */
-    public function getMemberId()
+    public function getTargetId()
     {
-        return $this->member_id;
+        return $this->target_id;
     }
 }

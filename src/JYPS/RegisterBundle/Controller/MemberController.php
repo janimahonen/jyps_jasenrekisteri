@@ -10,6 +10,7 @@ use JYPS\RegisterBundle\Entity\MemberFee;
 use JYPS\RegisterBundle\Entity\Intrest;
 use JYPS\RegisterBundle\Entity\IntrestConfig;
 use JYPS\RegisterBundle\Entity\MemberFeeConfig;
+use JYPS\RegisterBundle\Entity\EventLog;
 use JYPS\RegisterBundle\Form\Type\MemberJoinType;
 use JYPS\RegisterBundle\Form\Type\MemberAddType;
 use JYPS\RegisterBundle\Form\Type\MemberEditType;
@@ -241,8 +242,6 @@ public function sendMembershipCardAction(Request $request)
    
 
     $memberid = $this->get('request')->request->get('memberid');
-
-    $em = $this->getDoctrine()->getManager();
 
     $member = $this->getDoctrine()
     ->getRepository('JYPSRegisterBundle:Member')
